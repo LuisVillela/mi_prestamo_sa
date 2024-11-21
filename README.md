@@ -80,3 +80,12 @@ docker exec -it postgres_miprestamo psql -U miprestamo_user -d miprestamo_db
 
 # Ejecuta el script SQL para crear las tablas:
 \i /schema.sql
+
+## recomendacion de instalaciones
+
+# tirar node y volver a instalarlo
+# npm install axios
+# npm install -D tailwindcss
+# npm install cors
+# npm install @heroicons/react
+
