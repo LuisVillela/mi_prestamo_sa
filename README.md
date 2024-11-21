@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## cargar el script
+
+# Copia el archivo schema.sql al contenedor de PostgreSQL:
+docker cp schema.sql postgres_miprestamo:/schema.sql
+
+# Conéctate al contenedor:
+docker exec -it postgres_miprestamo psql -U miprestamo_user -d miprestamo_db
+
+# Ejecuta el script SQL para crear las tablas:
+\i /schema.sql
