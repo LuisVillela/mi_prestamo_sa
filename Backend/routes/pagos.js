@@ -3,10 +3,10 @@ const { registrarPago, validarPago } = require('../controllers/pagosController')
 
 const router = express.Router();
 
-// Registrar un pago
+// Ruta para registrar un pago
 router.post('/registrar', registrarPago);
 
-// Validar un pago
+// Ruta para validar un pago
 router.put('/validar/:pagoId', validarPago);
 
 module.exports = router;

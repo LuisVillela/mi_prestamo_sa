@@ -1,12 +1,15 @@
 const express = require('express');
-const { crearPrestamo, obtenerPrestamos } = require('../controllers/prestamosController');
+const { crearPrestamo, obtenerPrestamosPendientes, aprobarPrestamo } = require('../controllers/prestamosController');
 
 const router = express.Router();
 
-// Crear un préstamo
+// Ruta para crear un préstamo
 router.post('/crear', crearPrestamo);
 
-// Obtener todos los préstamos
-router.get('/', obtenerPrestamos);
+// Ruta para obtener préstamos pendientes
+router.get('/pendientes', obtenerPrestamosPendientes);
+
+// Ruta para aprobar/rechazar un préstamo
+router.put('/aprobar/:id', aprobarPrestamo);
 
 module.exports = router;

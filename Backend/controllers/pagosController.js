@@ -11,9 +11,9 @@ exports.registrarPago = async (req, res) => {
        VALUES ($1, $2, $3, $4, $5) RETURNING *`,
       [calendario_id, fecha_real, monto_pagado, mora, estado_id]
     );
-    res.status(201).json({ pago: result.rows[0] });
+    res.status(201).json({ message: 'Pago registrado exitosamente', pago: result.rows[0] });
   } catch (error) {
-    console.error(error);
+    console.error('Error al registrar el pago:', error);
     res.status(500).json({ message: 'Error al registrar el pago' });
   }
 };
@@ -29,9 +29,9 @@ exports.validarPago = async (req, res) => {
        VALUES ($1, $2, NOW(), $3) RETURNING *`,
       [pagoId, analista_id, estatus_id]
     );
-    res.status(200).json({ validacion: result.rows[0] });
+    res.status(200).json({ message: 'Pago validado exitosamente', validacion: result.rows[0] });
   } catch (error) {
-    console.error(error);
+    console.error('Error al validar el pago:', error);
     res.status(500).json({ message: 'Error al validar el pago' });
   }
 };

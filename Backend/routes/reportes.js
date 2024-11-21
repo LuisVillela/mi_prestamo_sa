@@ -3,10 +3,10 @@ const { generarReporteGeneral, generarReporteUsuario } = require('../controllers
 
 const router = express.Router();
 
-// Generar reporte general
+// Endpoint para generar reporte general
 router.get('/general', generarReporteGeneral);
 
-// Generar reporte para un usuario específico
+// Endpoint para generar reporte por usuario
 router.get('/usuario/:userId', generarReporteUsuario);
 
 module.exports = router;
